@@ -49,7 +49,7 @@ thop = 0;
     oversamp = 1;
     [LM,thop] = find_landmarks(d,sr,dens,oversamp);
     H = landmark2hash(LM);
-    disp(H);
+    disp(num2str(H));
   end
 
 

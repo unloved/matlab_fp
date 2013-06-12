@@ -58,6 +58,6 @@ end
 
 %Hq = landmark2hash(Lq);
 Hq = unique(landmark2hash(Lq), 'rows');
-disp(Hq);
+disp(num2str(Hq));
 
 N = length(Hq);
