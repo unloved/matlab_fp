@@ -1,4 +1,4 @@
-function [D, SR] = audioread(FN, TARGETSR, FORCEMONO, START, DUR, FILE_TYPE)
+function [D, SR] = audioread(FN, TARGETSR, FORCEMONO, START, DUR)
 % [D, SR] = audioread(FN, TARGETSR, FORCEMONO, START, DUR)
 %   Read in an audio file, using wavread, mp3read, m4aread, or flacread as
 %   appropriate. 
@@ -18,9 +18,6 @@ end
 
 [pth,nam,ext] = fileparts(FN);
 ext = lower(ext);
-if (FILE_TYPE)
-    ext = strcat('.',FILE_TYPE);
-end
 ismp3 = strcmp(ext,'.mp3');
 ism4a = strcmp(ext, '.m4a') || strcmp(ext, '.aac') || strcmp(ext, '.mp4');
 iswav = strcmp(ext, '.wav');

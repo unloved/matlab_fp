@@ -1,4 +1,4 @@
-function [N,T,H,thop] = add_hash(D, TSKIP, TDUR, dens, FILE_TYPE)
+function [N,T,H,thop] = add_hash(D, TSKIP, TDUR, dens)
 % [N,T,H,thop] = add_hash(D, TSKIP, TDUR, dens)
 %    Add audio files to the hashtable database.  
 %    D is a cell array of paths to audio files.
@@ -28,7 +28,7 @@ thop = 0;
 
   targetsr = 11025;
   forcemono = 1;
-  [d,sr] = audioread(D,targetsr,forcemono,TSKIP,TDUR, FILE_TYPE);
+  [d,sr] = audioread(D,targetsr,forcemono,TSKIP,TDUR);
 %  maxdur = 1200;  % truncate at 20 min
 %  actdur = length(d)/sr;
 %  if actdur > maxdur

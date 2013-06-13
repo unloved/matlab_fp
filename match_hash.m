@@ -1,4 +1,4 @@
-function [N,T,P,Lq] = match_hash(F,TSKIP,TDUR,DENS,OSAMP, FILE_TYPE)
+function [N,T,P,Lq] = match_hash(F,TSKIP,TDUR,DENS,OSAMP)
 % [R,N,T,P,L,Lq] = match_hash(F,TSKIP,TDUR,DENS,OSAMP,QUIET)
 %     Match landmarks from an audio query against the database.
 %     Rows of R are potential maxes, in format
@@ -25,7 +25,7 @@ if nargin < 5;  OSAMP = 0;  end
 
 targetsr = 11025;
 forcemono = 1;
-[D,SR] = audioread(F,targetsr,forcemono,TSKIP,TDUR, FILE_TYPE);
+[D,SR] = audioread(F,targetsr,forcemono,TSKIP,TDUR);
 T = length(D)/SR;
 
 if length(D) == 0

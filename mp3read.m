@@ -181,6 +181,9 @@ NBITS=16;
 
 %%%%% add extension if none (like wavread)
 [path,file,ext] = fileparts(FILE);
+if isempty(ext)
+  FILE = [FILE, '.mp3'];
+end
 
 %%%%% maybe expand ~ %%%%%%
 if FILE(1) == '~'
