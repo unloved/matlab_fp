@@ -135,9 +135,6 @@ NBITS=16;
 
 %%%%% add extension if none (like wavread)
 [path,file,ext] = fileparts(FILE);
-if isempty(ext)
-  FILE = [FILE, '.m4a'];
-end
 
   %%%%%% Probe file to find format, size, etc. 
   cmd = ['"',faad, '" -i "', FILE,'"'];
